@@ -19,12 +19,9 @@ gem 'rspec'
 
 gem 'rspec-rails'
 
-gem 'autotest'
-gem 'autotest-rails-pure'
-gem 'autotest-fsevent'
-gem 'autotest-growl'
-
 gem 'gravatar_image_tag'
+
+gem 'heroku'
 
 # Gems used only for assets and not required
 # in production environments by default.
