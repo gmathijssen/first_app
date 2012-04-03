@@ -18,7 +18,7 @@ gem 'webrat'
 gem 'rspec'
 
 gem 'rspec-rails'
-
+gem 'activerecord-postgresql-adapter'
 gem 'gravatar_image_tag'
 
 gem 'heroku'
