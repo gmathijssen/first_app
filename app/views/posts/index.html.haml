@@ -1,0 +1,28 @@
+%h2
+  Listing posts
+
+%table
+  %tr
+    %th Name
+    %th Title
+    %th Content
+    %th 
+    %th 
+    %th 
+
+  - @posts.each do |post|
+    %tr
+      %td= post.user.name
+      %td= post.title
+      %td= post.content
+      %td= link_to 'Show', post
+      - if current_user_is_admin? || post.user == current_user
+        %td= link_to 'Edit', edit_post_path(post)
+      - if current_user_is_admin?
+        %td= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+
+= will_paginate @posts
+
+%br
+
+= link_to 'New Post', new_post_path

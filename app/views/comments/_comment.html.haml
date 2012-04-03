@@ -1,0 +1,15 @@
+
+ 
+%p
+  = comment.body
+  %br
+  %span.whoandwhen
+    by
+    = comment.user.name if comment.user
+    = "Unknown" if !comment.user
+    at
+    = comment.updated_at
+  %br
+  = link_to 'Destroy Comment', [comment.post, comment],
+               :confirm => 'Are you sure?',
+               :method => :delete

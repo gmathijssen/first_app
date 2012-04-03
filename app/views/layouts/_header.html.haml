@@ -1,0 +1,26 @@
+%header
+  #container
+    #left
+      - logo = image_tag("logo.jpg", :width => 50, :alt => "Sample App", :class => "round")
+      = link_to logo, root_path
+    #center
+      %h1.apptitle.round
+        My blogging app
+    #right
+      %nav.round
+
+    
+        %ul
+          %li= link_to "Home", root_path
+          - if current_user_is_admin?
+            %li= link_to "Admin", "/home/admin"
+          - if signed_in?
+            %li
+              %b
+              = link_to @current_user.name, @current_user 
+        
+          - if signed_in?
+            %li= link_to "Sign out", signout_path, :method => :delete
+          - else
+            %li= link_to "Sign in", signin_path
+    #clear

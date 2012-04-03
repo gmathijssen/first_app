@@ -1,0 +1,16 @@
+%h1
+  Hi visitor, welcome to my blogging app.
+
+%h2
+  Sign in to become a blogger or just browse the 
+  = link_to "blogs", posts_path
+
+%table{:width => "100%"}
+  %t2
+    %td
+      %h2= link_to "Sign up", "/signup", :class => "signup_button"
+    %td
+      Or
+    %td
+      %h2= link_to "Sign in", "/signin", :class => "signup_button"
+
