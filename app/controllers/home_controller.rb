@@ -1,4 +1,9 @@
 class HomeController < ApplicationController
+  before_filter :signin_first
+  
+  def signin_first
+    
+  end
   
   def index
     @title = "Home"
