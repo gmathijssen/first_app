@@ -18,7 +18,7 @@ gem 'webrat'
 gem 'rspec'
 
 gem 'rspec-rails'
-gem 'activerecord-postgresql-adapter'
+
 gem 'gravatar_image_tag'
 
 gem 'heroku'
@@ -35,6 +35,10 @@ group :test do
   gem 'spork'
   gem "factory_girl_rails", "1.0"
 end 
+
+group :production do 
+  gem 'pg' 
+end
 
 gem 'jquery-rails'
 
