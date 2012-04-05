@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   
   before_filter :only_for_admins, :only => [:index, :destroy]
   before_filter :authorise_as_owner, :only => [:edit, :update, :delete]
-  before_filter :signin_first, :only => [:index, :destroy]
+  before_filter :signin_first, :except => [:new, :create]
   
   def signin_first
     

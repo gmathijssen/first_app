@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+  before_filter :signin_first, :except => [:index, :show]
+  
+  def signin_first
+    
+  end
   
   # GET /posts
   # GET /posts.json
