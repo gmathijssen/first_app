@@ -1,9 +1,19 @@
 %h1
-  Hi visitor, welcome to my blogging app.
+  Hi 
+  = @username
+  , welcome to my blogging app.
 
 %h2
   Sign in to become a blogger or just browse the 
   = link_to "blogs", posts_path
+
+- unless @posts.empty?
+  %table.posts{summary="Posts"}
+    = render @posts
+
+  = will_paginate @posts
+  
+  = link_to 'New Post', new_post_path if signed_in?
 
 %table{:width => "100%"}
   %t2

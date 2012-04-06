@@ -13,7 +13,7 @@
   .field
     = post_form.label :user
     %br
-    = post_form.select :user_id, options_for_select(User.all.map {|u| [u.name, u.id]}.sort)
+    = current_user.name
   .field
     = post_form.label :title
     %br
