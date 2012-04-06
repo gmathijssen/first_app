@@ -1,0 +1,41 @@
+#post
+
+  %p
+    %b= @post.title
+    %br
+    = @post.content
+    %br
+    %span.whoandwhen
+    Editted by 
+    = @post.user.name
+    at
+    = @post.updated_at
+
+
+
+  - if !@post.tags.empty?
+    .tags
+      %p
+        %b
+          Tags:
+        = join_tags(@post)
+
+  .comments
+
+    - if !@post.comments.empty?
+      %h2
+        Comments
+    
+    = render @post.comments
+
+
+  %h2
+    Add a comment:
+    
+  = render "comments/form"
+
+
+
+= link_to 'Edit', edit_post_path(@post)
+|
+= link_to 'Back', posts_path
